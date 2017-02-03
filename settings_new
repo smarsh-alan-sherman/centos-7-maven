@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <pluginGroups>
+  </pluginGroups>
+
+  <proxies>
+  </proxies>
+
+  <server>
+    <id>smarsh</id>
+    <username>jenkins</username>
+    <password>jenkins</password>
+  </server>
+
+  <mirrors>
+    <mirror>
+      <id>smarsh</id>
+      <mirrorOf>*</mirrorOf>
+      <name>smarsh internal mirror</name>
+      <url>http://archiva.default.svc.cluster.local/repository/smarsh</url>
+    </mirror>
+  </mirrors>
+
+  <profiles>
+    <profile>
+      <id>smarshBuild</id>
+      <distributionManagement>
+        <repository>
+          <id>smarsh</id>
+          <name>Internal Release Repository</name>
+          <url>http://archiva.default.svc.cluster.local:8081/repository/internal/</url>
+        </repository>
+        <snapshotRepository>
+          <id>smarsh</id>
+          <name>Internal Snapshot Repository</name>
+          <url>http://archiva.default.svc.cluster.local:8081/repository/snapshots/</url>
+        </snapshotRepository>
+      </distributionManagement>
+    </profile>
+    <activeProfiles>
+      <activeProfile>smarshBuild</activeProfile>
+    </activeProfiles>
+  </profiles>
+
+</settings>
