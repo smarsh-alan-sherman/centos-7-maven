@@ -20,7 +20,7 @@
       <id>smarsh</id>
       <mirrorOf>*</mirrorOf>
       <name>smarsh internal mirror</name>
-      <url>http://archiva.default.svc.cluster.local/repository/smarsh</url>
+      <url>http://archiva.default.svc.cluster.local:8080/repository/smarsh</url>
     </mirror>
   </mirrors>
 
