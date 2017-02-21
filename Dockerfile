@@ -11,8 +11,7 @@ RUN yum update -y \
      rpm-build \
   && yum clean all
 
-
 RUN gem install --no-ri --no-rdoc fpm
 
 RUN mkdir -p /etc/maven/
-COPY settings_old /etc/maven/settings.xml
+COPY settings_new /etc/maven/settings.xml
