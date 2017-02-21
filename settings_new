@@ -12,7 +12,7 @@
   <server>
     <id>smarsh</id>
     <username>jenkins</username>
-    <password>jenkins</password>
+    <password>jenkins1</password>
   </server>
 
   <mirrors>
