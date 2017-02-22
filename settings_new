@@ -9,11 +9,13 @@
   <proxies>
   </proxies>
 
-  <server>
-    <id>smarsh</id>
-    <username>jenkins</username>
-    <password>jenkins1</password>
-  </server>
+  <servers>
+    <server>
+      <id>smarsh</id>
+      <username>jenkins</username>
+      <password>jenkins1</password>
+    </server>
+  </servers>
 
   <mirrors>
     <mirror>
