@@ -1,75 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
-	<pluginGroups>
-	</pluginGroups>
+  <pluginGroups>
+  </pluginGroups>
 
-	<proxies>
-	</proxies>
+  <proxies>
+  </proxies>
 
-	<servers>
-		<server>
-			<id>smarsh</id>
-			<username>jenkins</username>
-			<password>jenkins1</password>
-		</server>
-	</servers>
+  <servers>
+    <server>
+      <id>smarsh</id>
+      <username>jenkins</username>
+      <password>jenkins1</password>
+    </server>
+  </servers>
 
-	<mirrors>
-		<mirror>
-			<id>smarsh</id>
-			<mirrorOf>*</mirrorOf>
-			<name>smarsh internal mirror</name>
-			<url>http://archiva.default.svc.cluster.local:8080/repository/smarsh</url>
-		</mirror>
-	</mirrors>
+  <mirrors>
+    <mirror>
+      <id>smarsh</id>
+      <mirrorOf>*</mirrorOf>
+      <name>smarsh internal mirror</name>
+      <url>http://archiva.default.svc.cluster.local:8080/repository/smarsh</url>
+    </mirror>
+  </mirrors>
 
-	<profiles>
-		<profile>
-			<id>smarshBuild</id>
-			<distributionManagement>
-				<repositories>
-					<repository>
-						<id>releases.repository</id>
-						<name>Archiva Managed Internal Repository</name>
-						<url>http://archiva.default.svc.cluster.local/repository/internal/</url>
-						<releases>
-							<enabled>true</enabled>
-						</releases>
-						<snapshots>
-							<enabled>false</enabled>
-						</snapshots>
-					</repository>
-					<repository>
-						<id>snapshots.repository</id>
-						<name>Archiva Managed Internal Repository</name>
-						<url>http://archiva.default.svc.cluster.local/repository/snapshots/</url>
-						<releases>
-							<enabled>false</enabled>
-						</releases>
-						<snapshots>
-							<enabled>true</enabled>
-						</snapshots>
-					</repository>
-				</repositories>
-				<distributionManagement>
-					<repository>
-						<id>smarsh</id>
-						<name>Internal Release Repository</name>
-						<url>http://archiva.default.svc.cluster.local:8081/repository/internal/</url>
-					</repository>
-					<snapshotRepository>
-						<id>smarsh</id>
-						<name>Internal Snapshot Repository</name>
-						<url>http://archiva.default.svc.cluster.local:8081/repository/snapshots/</url>
-					</snapshotRepository>
-				</distributionManagement>
-			</profile>
-			<activeProfiles>
-				<activeProfile>smarshBuild</activeProfile>
-			</activeProfiles>
-		</profiles>
+  <profiles>
+    <profile>
+      <id>smarshBuild</id>
+      <repositories>
+        <repository>
+          <id>releases.repository</id>
+          <name>Archiva Managed Internal Repository</name>
+          <url>http://archiva.default.svc.cluster.local/repository/internal/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+        <repository>
+          <id>snapshots.repository</id>
+          <name>Archiva Managed Internal Repository</name>
+          <url>http://archiva.default.svc.cluster.local/repository/snapshots/</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+      <distributionManagement>
+        <repository>
+          <id>smarsh</id>
+          <name>Internal Release Repository</name>
+          <url>http://archiva.default.svc.cluster.local:8081/repository/internal/</url>
+        </repository>
+        <snapshotRepository>
+          <id>smarsh</id>
+          <name>Internal Snapshot Repository</name>
+          <url>http://archiva.default.svc.cluster.local:8081/repository/snapshots/</url>
+        </snapshotRepository>
+      </distributionManagement>
+    </profile>
+    <activeProfiles>
+      <activeProfile>smarshBuild</activeProfile>
+    </activeProfiles>
+  </profiles>
 
-	</settings>
+</settings>
