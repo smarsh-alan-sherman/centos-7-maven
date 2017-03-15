@@ -9,6 +9,7 @@ RUN yum update -y \
      gcc \
      make \
      rpm-build \
+     git \
   && yum clean all
 
 RUN gem install --no-ri --no-rdoc fpm
