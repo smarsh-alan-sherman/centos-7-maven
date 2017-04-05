@@ -5,14 +5,15 @@ RUN yum update -y \
   && yum install -y java-1.8.0-openjdk \
      java-1.8.0-openjdk-devel \
      maven \
-     ruby-devel \
-     gcc \
-     make \
-     rpm-build \
      git \
+     wget \
   && yum clean all
 
-RUN gem install --no-ri --no-rdoc fpm
+RUN wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.0.702-linux.zip \
+  && unzip sonar-scanner-cli-3.0.0.702-linux.zip \
+  && rm sonar-scanner-cli-3.0.0.702-linux.zip \
+  && /sonar-scanner-3.0.0.702-linux/bin/sonar-scanner /bin/
+copy sonar-scanner.properties /sonar-scanner-3.0.0.702-linux/conf/sonar-scanner.properties
 
 RUN mkdir -p /etc/maven/
-COPY settings_new /etc/maven/settings.xml
+COPY settings.xml /etc/maven/settings.xml
