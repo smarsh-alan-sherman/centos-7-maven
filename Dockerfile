@@ -12,7 +12,7 @@ RUN yum update -y \
 RUN wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.0.702-linux.zip \
   && unzip sonar-scanner-cli-3.0.0.702-linux.zip \
   && rm sonar-scanner-cli-3.0.0.702-linux.zip \
-  && /sonar-scanner-3.0.0.702-linux/bin/sonar-scanner /bin/
+  && ln -s /sonar-scanner-3.0.0.702-linux/bin/sonar-scanner /bin/
 copy sonar-scanner.properties /sonar-scanner-3.0.0.702-linux/conf/sonar-scanner.properties
 
 RUN mkdir -p /etc/maven/
