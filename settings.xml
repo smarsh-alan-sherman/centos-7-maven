@@ -22,7 +22,7 @@
 			<id>archiva</id>
 			<mirrorOf>*</mirrorOf>
 			<name>smarsh internal mirror</name>
-			<url>http://beacon-archiva.default.svc.cluster.local:8080/repository/smarsh</url>
+			<url>http://beacon-archiva.default.svc.cluster.local/repository/smarsh</url>
 		</mirror>
 	</mirrors>
 
